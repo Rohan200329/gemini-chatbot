@@ -3,7 +3,7 @@ import requests
 import json
 from flask import Flask, request, jsonify, render_template_string
 
-API_KEY = "YOUR_API_KEY"  # replace with your Gemini API key
+API_KEY = "AIzaSyBZSS942Zn7FP_nBctj57LOhah5jUXNhbc"  # replace with your Gemini API key
 
 url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={API_KEY}"
 
@@ -19,7 +19,7 @@ def ask_gemini(prompt):
         if "candidates" in result:
             return result["candidates"][0]["content"]["parts"][0]["text"]
         else:
-            return "⚠️ No response"
+            return "No response"
     else:
         return f"Error {response.status_code}: {response.text}"
 
