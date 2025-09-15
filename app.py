@@ -3,7 +3,7 @@ import requests
 import json
 from flask import Flask, request, jsonify, render_template_string
 
-API_KEY = "AIzaSyBZSS942Zn7FP_nBctj57LOhah5jUXNhbc"  # replace with your Gemini API key
+API_KEY = os.environ.get("API_KEY")  # secure, works with Render
 
 url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={API_KEY}"
 
